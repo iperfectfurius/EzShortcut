@@ -20,24 +20,13 @@ namespace EzShortcut
             notifyIcon1.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Hide();
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("xd");
-        }
-
-        private void pHPiniIISToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFile.OpenFiles(@"C:\\PHP\\php.ini");
-        }
-
         private void LoadConfig()
         {
+            void AddedItemClickEvent(object sender, EventArgs e, string route)
+            {
+                OpenFile.OpenFiles(route);
+            }
+
             foreach (JObject file in cg.configLoaded["open"])
             {
                 foreach (var pair in file)
@@ -47,16 +36,12 @@ namespace EzShortcut
                     newFile.Name = pair.Key;
 
                     (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Add(newFile);
-
-
                 }
 
             }
+            
         }
-        private void AddedItemClickEvent(object sender, EventArgs e, string route)
-        {
-            OpenFile.OpenFiles(route);
-        }
+        
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             notifyIcon1.Visible = false;
