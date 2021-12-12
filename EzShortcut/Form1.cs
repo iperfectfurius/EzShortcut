@@ -9,10 +9,9 @@ namespace EzShortcut
         Config cg = new Config();
         public Form1()
         {
-            this.ShowInTaskbar = false;
-            
+            this.ShowInTaskbar = false;      
             InitializeComponent();
-            
+            LoadConfig();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,9 +32,13 @@ namespace EzShortcut
 
         private void pHPiniIISToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //OpenFiles(@"C:\Program Files\iis express\PHP\v7.3\php.ini");
+            OpenFile.OpenFiles(@"C:\\PHP\\php.ini");
         }
 
+        private void LoadConfig()
+        {
+
+        }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             notifyIcon1.Visible =false;

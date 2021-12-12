@@ -9,18 +9,20 @@ namespace EzShortcut.Clases
 {
     internal class Config
     {
-        string folderApplication = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\EzShortcut";
-        string config = "EZShortcut_config.json";
+        private readonly string folderApplication = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\EzShortcut";
+        private const string config = "EZShortcut_config.json";
+        public JObject configLoaded = new JObject();
 
         public Config()
         {
             LoadConfig();
+
         }
         public void LoadConfig()
         {
-            if (File.Exists($"{folderApplication}\\{config}")) return;
-            CreateConfig();
-
+            if (!File.Exists($"{folderApplication}\\{config}"));
+                CreateConfig();
+            configLoaded = JObject.Parse(File.ReadAllText($"{folderApplication}\\{config}"));
         }
         private void CreateConfig()
         {
@@ -31,10 +33,10 @@ namespace EzShortcut.Clases
                 new JProperty("open", new JArray(
                     new JObject(
                         new JProperty("PHP.ini(IIS)", "C:\\Program Files\\iis express\\PHP\\v7.3\\php.ini"),
-                        new JProperty("PHP.ini(Apache)", "")
+                        new JProperty("PHP.ini(Apache)", "C:\\PHP\\php.ini")
                     )))
                 );
-
+            
             File.WriteAllText($"{folderApplication}\\{config}", defaultSettings.ToString());
         }
     }
