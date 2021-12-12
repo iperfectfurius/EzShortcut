@@ -21,5 +21,16 @@ namespace EzShortcut.Clases
             }
 
         }
+        public static void ExecuteScript(string script)
+        {
+            var wt = new ProcessStartInfo
+            {
+                FileName = "wt.exe",
+                LoadUserProfile = true,
+                UseShellExecute = true,
+                Arguments = script
+            };
+            Process.Start(wt);
+        }
     }
 }

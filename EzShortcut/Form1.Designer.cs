@@ -33,6 +33,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +48,22 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lolToolStripMenuItem});
+            this.lolToolStripMenuItem,
+            this.scriptsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
+            // 
+            // scriptsToolStripMenuItem
+            // 
+            this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scriptsToolStripMenuItem.Text = "Scripts";
             // 
             // Form1
             // 
@@ -76,5 +84,6 @@
         private NotifyIcon notifyIcon1;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem lolToolStripMenuItem;
+        private ToolStripMenuItem scriptsToolStripMenuItem;
     }
 }

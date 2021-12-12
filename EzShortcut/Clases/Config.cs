@@ -20,7 +20,7 @@ namespace EzShortcut.Clases
         }
         public void LoadConfig()
         {
-            if (!File.Exists($"{folderApplication}\\{config}"));
+            if (!File.Exists($"{folderApplication}\\{config}"))
                 CreateConfig();
             configLoaded = JObject.Parse(File.ReadAllText($"{folderApplication}\\{config}"));
         }

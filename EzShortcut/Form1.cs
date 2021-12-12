@@ -22,9 +22,13 @@ namespace EzShortcut
 
         private void LoadConfig()
         {
-            void AddedItemClickEvent(object sender, EventArgs e, string route)
+            void AddedItemClickEventOpen(object sender, EventArgs e, string route)
             {
                 OpenFile.OpenFiles(route);
+            }
+            void AddedItemClickEventScript(object sender, EventArgs e, string script)
+            {
+                OpenFile.ExecuteScript(script);
             }
 
             foreach (JObject file in cg.configLoaded["open"])
@@ -32,14 +36,24 @@ namespace EzShortcut
                 foreach (var pair in file)
                 {
                     var newFile = new ToolStripMenuItem(pair.Key);
-                    newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, pair.Value.ToString()));
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventOpen(s, e, pair.Value.ToString()));
                     newFile.Name = pair.Key;
 
                     (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Add(newFile);
                 }
-
             }
-            
+
+            foreach (JObject script in cg.configLoaded["scripts"])
+            {
+                foreach (var pair in script)
+                {
+                    var newFile = new ToolStripMenuItem(pair.Key);
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventScript(s, e, pair.Value.ToString()));
+                    newFile.Name = pair.Key;
+
+                    (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Add(newFile);
+                }
+            }
         }
         
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
