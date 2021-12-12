@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzShortcut", "EzShortcut\EzShortcut.csproj", "{ADD301FA-8065-40B5-BBBB-3F86EA6256B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADD301FA-8065-40B5-BBBB-3F86EA6256B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD301FA-8065-40B5-BBBB-3F86EA6256B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD301FA-8065-40B5-BBBB-3F86EA6256B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD301FA-8065-40B5-BBBB-3F86EA6256B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4678BF4A-BEBD-410B-8660-71A2A2E4EFEA}
+	EndGlobalSection
+EndGlobal
