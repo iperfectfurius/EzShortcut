@@ -36,6 +36,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pHPiniIISToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pHPiniApacheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,8 @@
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pHPiniIISToolStripMenuItem});
+            this.pHPiniIISToolStripMenuItem,
+            this.pHPiniApacheToolStripMenuItem});
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
             this.lolToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
@@ -85,8 +87,15 @@
             // pHPiniIISToolStripMenuItem
             // 
             this.pHPiniIISToolStripMenuItem.Name = "pHPiniIISToolStripMenuItem";
-            this.pHPiniIISToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pHPiniIISToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.pHPiniIISToolStripMenuItem.Text = "PHP.ini(IIS)";
+            this.pHPiniIISToolStripMenuItem.Click += new System.EventHandler(this.pHPiniIISToolStripMenuItem_Click);
+            // 
+            // pHPiniApacheToolStripMenuItem
+            // 
+            this.pHPiniApacheToolStripMenuItem.Name = "pHPiniApacheToolStripMenuItem";
+            this.pHPiniApacheToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.pHPiniApacheToolStripMenuItem.Text = "PHP.ini(Apache)";
             // 
             // Form1
             // 
@@ -98,6 +107,7 @@
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -112,5 +122,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem lolToolStripMenuItem;
         private ToolStripMenuItem pHPiniIISToolStripMenuItem;
+        private ToolStripMenuItem pHPiniApacheToolStripMenuItem;
     }
 }
