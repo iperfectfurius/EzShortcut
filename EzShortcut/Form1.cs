@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using EzShortcut.Clases;
+using Newtonsoft.Json.Linq;
 
 namespace EzShortcut
 {
@@ -9,7 +10,7 @@ namespace EzShortcut
         Config cg = new Config();
         public Form1()
         {
-            this.ShowInTaskbar = false;      
+            this.ShowInTaskbar = false;
             InitializeComponent();
             LoadConfig();
         }
@@ -22,7 +23,7 @@ namespace EzShortcut
         private void button1_Click(object sender, EventArgs e)
         {
             //Hide();
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,11 +38,28 @@ namespace EzShortcut
 
         private void LoadConfig()
         {
+            foreach (JObject file in cg.configLoaded["open"])
+            {
+                foreach (var pair in file)
+                {
+                    var newFile = new ToolStripMenuItem(pair.Key);
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, pair.Value.ToString()));
+                    newFile.Name = pair.Key;
 
+                    (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Add(newFile);
+
+
+                }
+
+            }
+        }
+        private void AddedItemClickEvent(object sender, EventArgs e, string route)
+        {
+            OpenFile.OpenFiles(route);
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            notifyIcon1.Visible =false;
+            notifyIcon1.Visible = false;
         }
     }
 }

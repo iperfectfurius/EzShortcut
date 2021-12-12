@@ -73,7 +73,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lolToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
             // lolToolStripMenuItem
             // 
@@ -81,20 +81,20 @@
             this.pHPiniIISToolStripMenuItem,
             this.pHPiniApacheToolStripMenuItem});
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
             // 
             // pHPiniIISToolStripMenuItem
             // 
             this.pHPiniIISToolStripMenuItem.Name = "pHPiniIISToolStripMenuItem";
-            this.pHPiniIISToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.pHPiniIISToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pHPiniIISToolStripMenuItem.Text = "PHP.ini(IIS)";
             this.pHPiniIISToolStripMenuItem.Click += new System.EventHandler(this.pHPiniIISToolStripMenuItem_Click);
             // 
             // pHPiniApacheToolStripMenuItem
             // 
             this.pHPiniApacheToolStripMenuItem.Name = "pHPiniApacheToolStripMenuItem";
-            this.pHPiniApacheToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.pHPiniApacheToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pHPiniApacheToolStripMenuItem.Text = "PHP.ini(Apache)";
             // 
             // Form1
