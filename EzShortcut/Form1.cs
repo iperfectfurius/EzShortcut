@@ -25,14 +25,14 @@ namespace EzShortcut
             void AddedItemClickEventOpen(object sender, EventArgs e, string route, bool elevated)
             {
                 if (elevated)
-                    OpenFile.ExecuteWithElevatedPermissions(route);
+                    OpenShortcut.ExecuteWithElevatedPermissions(route);
                 else
-                    OpenFile.OpenFiles(route);
+                    OpenShortcut.OpenFiles(route);
 
             }
             void AddedItemClickEventScript(object sender, EventArgs e, string script)
             {
-                OpenFile.ExecuteScript(script);
+                OpenShortcut.ExecuteScript(script);
             }
 
             foreach (JObject file in cg.configLoaded["open"])

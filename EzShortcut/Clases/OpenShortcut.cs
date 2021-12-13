@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EzShortcut.Clases
 {
-    internal class OpenFile
+    internal class OpenShortcut
     {
         public static void OpenFiles(string Route)
         {
