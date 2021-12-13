@@ -57,38 +57,38 @@
             this.reloadMenuToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 114);
             // 
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
             // 
             // scriptsToolStripMenuItem
             // 
             this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
-            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.scriptsToolStripMenuItem.Text = "Scripts";
             // 
             // abrirConfigToolStripMenuItem
             // 
             this.abrirConfigToolStripMenuItem.Name = "abrirConfigToolStripMenuItem";
-            this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.abrirConfigToolStripMenuItem.Text = "Abrir Config";
             this.abrirConfigToolStripMenuItem.Click += new System.EventHandler(this.abrirConfigToolStripMenuItem_Click);
             // 
             // reloadMenuToolStripMenuItem
             // 
             this.reloadMenuToolStripMenuItem.Name = "reloadMenuToolStripMenuItem";
-            this.reloadMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadMenuToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.reloadMenuToolStripMenuItem.Text = "Reload Menu";
             this.reloadMenuToolStripMenuItem.Click += new System.EventHandler(this.reloadMenuToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -97,8 +97,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(195, 75);
+            this.ControlBox = false;
             this.Enabled = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "EZShortcut V0.1";
