@@ -43,7 +43,7 @@
             this.notifyIcon1.BalloonTipTitle = "EZShortcut V0.1";
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Text = "EZShortcut V0.1";
             // 
             // contextMenuStrip1
             // 
@@ -51,25 +51,25 @@
             this.lolToolStripMenuItem,
             this.scriptsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 48);
             // 
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
             // 
             // scriptsToolStripMenuItem
             // 
             this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
-            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.scriptsToolStripMenuItem.Text = "Scripts";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(421, 158);
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "Form1";

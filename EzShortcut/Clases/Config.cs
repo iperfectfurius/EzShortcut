@@ -22,7 +22,14 @@ namespace EzShortcut.Clases
         {
             if (!File.Exists($"{folderApplication}\\{config}"))
                 CreateConfig();
-            configLoaded = JObject.Parse(File.ReadAllText($"{folderApplication}\\{config}"));
+            try
+            {
+                configLoaded = JObject.Parse(File.ReadAllText($"{folderApplication}\\{config}"));
+            }
+            catch
+            {
+                MessageBox.Show("La configuración no es correcta.");
+            }
         }
         private void CreateConfig()
         {
