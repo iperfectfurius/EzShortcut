@@ -34,6 +34,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,21 +50,29 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lolToolStripMenuItem,
-            this.scriptsToolStripMenuItem});
+            this.scriptsToolStripMenuItem,
+            this.abrirConfigToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
             // 
             // scriptsToolStripMenuItem
             // 
             this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
-            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scriptsToolStripMenuItem.Text = "Scripts";
+            // 
+            // abrirConfigToolStripMenuItem
+            // 
+            this.abrirConfigToolStripMenuItem.Name = "abrirConfigToolStripMenuItem";
+            this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirConfigToolStripMenuItem.Text = "Abrir Config";
+            this.abrirConfigToolStripMenuItem.Click += new System.EventHandler(this.abrirConfigToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -85,5 +94,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem lolToolStripMenuItem;
         private ToolStripMenuItem scriptsToolStripMenuItem;
+        private ToolStripMenuItem abrirConfigToolStripMenuItem;
     }
 }

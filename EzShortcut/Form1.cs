@@ -60,5 +60,10 @@ namespace EzShortcut
         {
             notifyIcon1.Visible = false;
         }
+
+        private void abrirConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cg.openConfig();
+        }
     }
 }

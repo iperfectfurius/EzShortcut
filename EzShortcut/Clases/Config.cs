@@ -11,20 +11,21 @@ namespace EzShortcut.Clases
     {
         private readonly string folderApplication = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\EzShortcut";
         private const string config = "EZShortcut_config.json";
+        private readonly string pathConfig;
         public JObject configLoaded = new JObject();
 
         public Config()
         {
+            pathConfig = $"{folderApplication}\\{config}";
             LoadConfig();
-
         }
         public void LoadConfig()
         {
-            if (!File.Exists($"{folderApplication}\\{config}"))
+            if (!File.Exists(pathConfig))
                 CreateConfig();
             try
             {
-                configLoaded = JObject.Parse(File.ReadAllText($"{folderApplication}\\{config}"));
+                configLoaded = JObject.Parse(File.ReadAllText(pathConfig));
             }
             catch
             {
@@ -44,7 +45,11 @@ namespace EzShortcut.Clases
                     )))
                 );
             
-            File.WriteAllText($"{folderApplication}\\{config}", defaultSettings.ToString());
+            File.WriteAllText(pathConfig, defaultSettings.ToString());
+        }
+        public void openConfig()
+        {
+            OpenFile.OpenFiles(pathConfig);
         }
     }
 }
