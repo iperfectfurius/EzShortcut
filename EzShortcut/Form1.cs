@@ -65,5 +65,19 @@ namespace EzShortcut
         {
             cg.openConfig();
         }
+
+        private void reloadMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cg.LoadConfig();
+            DeleteDropDownMenu();
+            LoadConfig();
+            contextMenuStrip1.Show();
+        }
+
+        private void DeleteDropDownMenu()
+        {
+            (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Clear();
+            (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Clear();        
+        }
     }
 }

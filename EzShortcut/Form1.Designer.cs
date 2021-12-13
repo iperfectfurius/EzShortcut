@@ -35,6 +35,7 @@
             this.lolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reloadMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +52,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lolToolStripMenuItem,
             this.scriptsToolStripMenuItem,
-            this.abrirConfigToolStripMenuItem});
+            this.abrirConfigToolStripMenuItem,
+            this.reloadMenuToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // lolToolStripMenuItem
             // 
@@ -73,6 +75,13 @@
             this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirConfigToolStripMenuItem.Text = "Abrir Config";
             this.abrirConfigToolStripMenuItem.Click += new System.EventHandler(this.abrirConfigToolStripMenuItem_Click);
+            // 
+            // reloadMenuToolStripMenuItem
+            // 
+            this.reloadMenuToolStripMenuItem.Name = "reloadMenuToolStripMenuItem";
+            this.reloadMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reloadMenuToolStripMenuItem.Text = "Reload Menu";
+            this.reloadMenuToolStripMenuItem.Click += new System.EventHandler(this.reloadMenuToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -95,5 +104,6 @@
         private ToolStripMenuItem lolToolStripMenuItem;
         private ToolStripMenuItem scriptsToolStripMenuItem;
         private ToolStripMenuItem abrirConfigToolStripMenuItem;
+        private ToolStripMenuItem reloadMenuToolStripMenuItem;
     }
 }
