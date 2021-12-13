@@ -22,9 +22,13 @@ namespace EzShortcut
 
         private void LoadConfig()
         {
-            void AddedItemClickEventOpen(object sender, EventArgs e, string route)
+            void AddedItemClickEventOpen(object sender, EventArgs e, string route, bool elevated)
             {
-                OpenFile.OpenFiles(route);
+                if (elevated)
+                    OpenFile.ExecuteWithElevatedPermissions(route);
+                else
+                    OpenFile.OpenFiles(route);
+
             }
             void AddedItemClickEventScript(object sender, EventArgs e, string script)
             {
@@ -35,9 +39,12 @@ namespace EzShortcut
             {
                 foreach (var pair in file)
                 {
-                    var newFile = new ToolStripMenuItem(pair.Key);
-                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventOpen(s, e, pair.Value.ToString()));
-                    newFile.Name = pair.Key;
+                    bool elevatedPrivileges = pair.Key.Contains('*');
+                    string name = pair.Key;           
+                        
+                    var newFile = new ToolStripMenuItem(name);
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventOpen(s, e, pair.Value.ToString(), elevatedPrivileges));
+                    newFile.Name = name;
 
                     (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Add(newFile);
                 }
@@ -55,10 +62,11 @@ namespace EzShortcut
                 }
             }
         }
-        
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             notifyIcon1.Visible = false;
+            notifyIcon1.Dispose();
         }
 
         private void abrirConfigToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,7 +85,7 @@ namespace EzShortcut
         private void DeleteDropDownMenu()
         {
             (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Clear();
-            (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Clear();        
+            (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Clear();
         }
     }
 }

@@ -32,5 +32,16 @@ namespace EzShortcut.Clases
             };
             Process.Start(wt);
         }
+        public static void ExecuteWithElevatedPermissions(string arguments)
+        {
+            var process = new ProcessStartInfo
+            {
+                FileName = arguments,
+                LoadUserProfile = true,
+                UseShellExecute = true,
+                Verb = "runas",
+            };
+            Process.Start(process);
+        }
     }
 }
