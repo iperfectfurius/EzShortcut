@@ -36,6 +36,7 @@
             this.scriptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,35 +54,43 @@
             this.lolToolStripMenuItem,
             this.scriptsToolStripMenuItem,
             this.abrirConfigToolStripMenuItem,
-            this.reloadMenuToolStripMenuItem});
+            this.reloadMenuToolStripMenuItem,
+            this.closeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
             // 
             // lolToolStripMenuItem
             // 
             this.lolToolStripMenuItem.Name = "lolToolStripMenuItem";
-            this.lolToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.lolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lolToolStripMenuItem.Text = "Abrir...";
             // 
             // scriptsToolStripMenuItem
             // 
             this.scriptsToolStripMenuItem.Name = "scriptsToolStripMenuItem";
-            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.scriptsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.scriptsToolStripMenuItem.Text = "Scripts";
             // 
             // abrirConfigToolStripMenuItem
             // 
             this.abrirConfigToolStripMenuItem.Name = "abrirConfigToolStripMenuItem";
-            this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.abrirConfigToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.abrirConfigToolStripMenuItem.Text = "Abrir Config";
             this.abrirConfigToolStripMenuItem.Click += new System.EventHandler(this.abrirConfigToolStripMenuItem_Click);
             // 
             // reloadMenuToolStripMenuItem
             // 
             this.reloadMenuToolStripMenuItem.Name = "reloadMenuToolStripMenuItem";
-            this.reloadMenuToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.reloadMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reloadMenuToolStripMenuItem.Text = "Reload Menu";
             this.reloadMenuToolStripMenuItem.Click += new System.EventHandler(this.reloadMenuToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -108,5 +117,6 @@
         private ToolStripMenuItem scriptsToolStripMenuItem;
         private ToolStripMenuItem abrirConfigToolStripMenuItem;
         private ToolStripMenuItem reloadMenuToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem;
     }
 }

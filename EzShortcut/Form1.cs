@@ -87,5 +87,10 @@ namespace EzShortcut
             (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Clear();
             (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Clear();
         }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
