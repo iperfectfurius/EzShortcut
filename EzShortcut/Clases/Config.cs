@@ -49,7 +49,7 @@ namespace EzShortcut.Clases
         }
         public void openConfig()
         {
-            OpenShortcut.OpenFiles(pathConfig);
+            OpenShortcut.OpenFile(pathConfig);
         }
     }
 }

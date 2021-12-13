@@ -100,6 +100,8 @@
             this.ControlBox = false;
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.ShowInTaskbar = false;
             this.Text = "EZShortcut V0.1";

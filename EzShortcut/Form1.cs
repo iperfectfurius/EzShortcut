@@ -27,7 +27,7 @@ namespace EzShortcut
                 if (elevated)
                     OpenShortcut.ExecuteWithElevatedPermissions(route);
                 else
-                    OpenShortcut.OpenFiles(route);
+                    OpenShortcut.OpenFile(route);
 
             }
             void AddedItemClickEventScript(object sender, EventArgs e, string script)

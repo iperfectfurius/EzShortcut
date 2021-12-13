@@ -9,7 +9,7 @@ namespace EzShortcut.Clases
 {
     internal class OpenShortcut
     {
-        public static void OpenFiles(string Route)
+        public static void OpenFile(string Route)
         {
             try
             {
