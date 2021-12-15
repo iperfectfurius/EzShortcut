@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Diagnostics;
 using EzShortcut.Clases;
 using Newtonsoft.Json.Linq;
@@ -22,29 +23,42 @@ namespace EzShortcut
 
         private void LoadConfig()
         {
-            void AddedItemClickEventOpen(object sender, EventArgs e, string route, bool elevated)
+            void AddedItemClickEvent(object sender, EventArgs e, Hashtable properties)
             {
-                if (elevated)
-                    OpenShortcut.ExecuteWithElevatedPermissions(route);
-                else
-                    OpenShortcut.OpenFile(route);
-
-            }
-            void AddedItemClickEventScript(object sender, EventArgs e, string script)
-            {
-                OpenShortcut.ExecuteScript(script);
+                switch (properties["Type"].ToString())
+                {
+                    case "File":
+                        if ((bool)properties["Privileges"])
+                            OpenShortcut.ExecuteWithElevatedPermissions(properties["Route"].ToString());
+                        else
+                            OpenShortcut.OpenFile(properties["Route"].ToString());
+                        break;
+                    case "Folder":
+                        OpenShortcut.OpenFolder($"\"{properties["Route"].ToString()}\"");
+                        break;
+                    case "script":
+                        OpenShortcut.ExecuteScript(properties["Route"].ToString());
+                        break;
+                    default:
+                        break;
+                }
+                
             }
 
             foreach (JObject file in cg.configLoaded["open"])
             {
                 foreach (var pair in file)
                 {
-                    bool elevatedPrivileges = pair.Key.Contains('*');
-                    string name = pair.Key;           
-                        
-                    var newFile = new ToolStripMenuItem(name);
-                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventOpen(s, e, pair.Value.ToString(), elevatedPrivileges));
-                    newFile.Name = name;
+                    Hashtable properties = new Hashtable();
+                    properties.Add("Name", pair.Key);
+                    properties.Add("Privileges", pair.Key.Contains('*'));
+                    properties.Add("Type", pair.Key.Contains('>') ? "Folder" : "File");
+                    properties.Add("Route", pair.Value);
+
+                    var newFile = new ToolStripMenuItem(properties["Name"].ToString());
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, properties));
+
+                    newFile.Name = properties["Name"].ToString();
 
                     (contextMenuStrip1.Items[0] as ToolStripMenuItem).DropDownItems.Add(newFile);
                 }
@@ -54,8 +68,13 @@ namespace EzShortcut
             {
                 foreach (var pair in script)
                 {
+                    Hashtable properties = new Hashtable();
+                    properties.Add("Name", pair.Key);
+                    properties.Add("Type", "Script");
+                    properties.Add("Route", pair.Value);
+
                     var newFile = new ToolStripMenuItem(pair.Key);
-                    newFile.Click += new EventHandler((s, e) => AddedItemClickEventScript(s, e, pair.Value.ToString()));
+                    newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, properties));
                     newFile.Name = pair.Key;
 
                     (contextMenuStrip1.Items[1] as ToolStripMenuItem).DropDownItems.Add(newFile);
