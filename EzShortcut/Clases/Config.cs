@@ -12,7 +12,7 @@ namespace EzShortcut.Clases
         private readonly string folderApplication = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData).ToString() + "\\EzShortcut";
         private const string config = "EZShortcut_config.json";
         private readonly string pathConfig;
-        public JObject configLoaded = new JObject();
+        public JObject configLoaded = new();
 
         public Config()
         {

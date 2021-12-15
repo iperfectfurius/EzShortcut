@@ -19,7 +19,6 @@ namespace EzShortcut.Clases
             {
                 Debug.Write("Error");
             }
-            Debug.WriteLine("non");
 
         }
         public static void ExecuteScript(string script)
@@ -54,7 +53,6 @@ namespace EzShortcut.Clases
                 Verb = "runas",
             };
             Process.Start(process);
-            Debug.WriteLine("Elevated");
         }
         
     }

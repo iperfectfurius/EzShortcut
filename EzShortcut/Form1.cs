@@ -56,6 +56,7 @@ namespace EzShortcut
                     properties.Add("Route", pair.Value);
 
                     var newFile = new ToolStripMenuItem(properties["Name"].ToString());
+                    var newFile = new ToolStripMenuItem(properties["Name"].ToString());
                     newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, properties));
 
                     newFile.Name = properties["Name"].ToString();
