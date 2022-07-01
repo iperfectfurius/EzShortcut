@@ -42,7 +42,10 @@ namespace EzShortcut.Clases
                     new JObject(
                         new JProperty("PHP.ini(IIS)", "C:\\Program Files\\iis express\\PHP\\v7.3\\php.ini"),
                         new JProperty("PHP.ini(Apache)", "C:\\PHP\\php.ini")
-                    )))
+                    ))),
+                new JProperty("scripts",new JArray(
+                    new JObject()
+                    ))
                 );
             
             File.WriteAllText(pathConfig, defaultSettings.ToString());
