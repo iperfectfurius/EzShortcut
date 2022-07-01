@@ -36,7 +36,7 @@ namespace EzShortcut
                     case "Folder":
                         OpenShortcut.OpenFolder($"\"{properties["Route"].ToString()}\"");
                         break;
-                    case "script":
+                    case "Script":
                         OpenShortcut.ExecuteScript(properties["Route"].ToString());
                         break;
                     default:
@@ -49,13 +49,13 @@ namespace EzShortcut
             {
                 foreach (var pair in file)
                 {
+                    //need change to dictionary
                     Hashtable properties = new Hashtable();
                     properties.Add("Name", pair.Key);
                     properties.Add("Privileges", pair.Key.Contains('*'));
                     properties.Add("Type", pair.Key.Contains('>') ? "Folder" : "File");
                     properties.Add("Route", pair.Value);
 
-                    var newFile = new ToolStripMenuItem(properties["Name"].ToString());
                     var newFile = new ToolStripMenuItem(properties["Name"].ToString());
                     newFile.Click += new EventHandler((s, e) => AddedItemClickEvent(s, e, properties));
 
@@ -69,6 +69,7 @@ namespace EzShortcut
             {
                 foreach (var pair in script)
                 {
+                    
                     Hashtable properties = new Hashtable();
                     properties.Add("Name", pair.Key);
                     properties.Add("Type", "Script");

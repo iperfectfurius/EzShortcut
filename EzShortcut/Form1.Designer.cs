@@ -96,13 +96,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 75);
+            this.ClientSize = new System.Drawing.Size(4, 0);
             this.ControlBox = false;
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.Opacity = 0D;
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "EZShortcut V0.1";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
