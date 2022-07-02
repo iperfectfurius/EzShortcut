@@ -44,9 +44,11 @@ namespace EzShortcut.Clases
                         new JProperty("PHP.ini(Apache)", "C:\\PHP\\php.ini")
                     ))),
                 new JProperty("scripts",new JArray(
-                    new JObject()
-                    ))
+                    new JObject(
+                        new JProperty("Mysql","mysql -u root -p")
+                    )))
                 );
+            
             
             File.WriteAllText(pathConfig, defaultSettings.ToString());
         }

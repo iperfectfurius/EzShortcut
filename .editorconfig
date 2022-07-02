@@ -2,3 +2,12 @@
 
 # IDE1006: Estilos de nombres
 dotnet_diagnostic.IDE1006.severity = silent
+
+# CS8602: Desreferencia de una referencia posiblemente NULL.
+dotnet_diagnostic.CS8602.severity = silent
+
+# CS8604: Posible argumento de referencia nulo
+dotnet_diagnostic.CS8604.severity = silent
+
+# CS8605: Conversión unboxing a un valor posiblemente NULL.
+dotnet_diagnostic.CS8605.severity = silent
