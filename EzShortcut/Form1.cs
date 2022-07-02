@@ -49,7 +49,6 @@ namespace EzShortcut
             {
                 foreach (var pair in file)
                 {
-                    //need change to dictionary
                     Hashtable properties = new Hashtable();
                     properties.Add("Name", pair.Key);
                     properties.Add("Privileges", pair.Key.Contains('*'));
